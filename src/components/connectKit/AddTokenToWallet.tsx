@@ -25,11 +25,9 @@ const AddTokenToWallet = ({ tokenIdValue }: { tokenIdValue: string }) => {
     }, [tokenIdValue]);
 
     return (
-        <div className="mtb">
-            <button className="btn btn-light" onClick={handleAddToken}>
-                + Add Token
-            </button>
-        </div>
+        <button className="btn btn-light" onClick={handleAddToken}>
+            + Add Token
+        </button>
     );
 };
 

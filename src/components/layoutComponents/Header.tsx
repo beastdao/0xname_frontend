@@ -7,11 +7,42 @@ import { ConnectButton } from '../connectKit/ConnectButton';
 import { Link } from 'react-router-dom';
 
 const pagePaths = {
-    '🗂️ COMMUNITY BASE': '/communitybase',
-    'MY NAMES': '/n/',
-    '🌈 REGISTER TLN': '/registertln',
-    'MY TLNs': '/t/',
-    ABOUT: '/about',
+    '🗂️ COMMUNITY BASE': { path: '/communitybase', external: false },
+    'MY NAMES': { path: '/n/', external: false },
+    '🌈 REGISTER TLN': { path: '/registertln', external: false },
+    'MY TLNs': { path: '/t/', external: false },
+    ABOUT: { path: '/about', external: false },
+    'Download Snap': {
+        path: 'https://snaps.metamask.io/snap/npm/0xname-resolver-snap/',
+        external: true,
+    },
+};
+
+const NavItemLink = ({
+    label,
+    pageInfo,
+}: {
+    label: string;
+    pageInfo: { path: string; external: boolean };
+}) => {
+    if (pageInfo.external) {
+        return (
+            <Nav.Item>
+                <Nav.Link href={pageInfo.path} target="_blank" rel="noopener noreferrer">
+                    {label}
+                    <img src="/fox.svg" alt="metamask svg" width={24} height={24} />
+                </Nav.Link>
+            </Nav.Item>
+        );
+    }
+
+    return (
+        <Nav.Item>
+            <Nav.Link as={Link} to={pageInfo.path}>
+                {label}
+            </Nav.Link>
+        </Nav.Item>
+    );
 };
 
 const Header = ({ pages }: { pages: (keyof typeof pagePaths)[] }) => (
@@ -25,11 +56,7 @@ const Header = ({ pages }: { pages: (keyof typeof pagePaths)[] }) => (
             <Navbar.Collapse>
                 <Nav>
                     {pages.map((page, index) => (
-                        <Nav.Item key={index}>
-                            <Nav.Link as={Link} to={pagePaths[page]}>
-                                {page}
-                            </Nav.Link>
-                        </Nav.Item>
+                        <NavItemLink key={index} label={page} pageInfo={pagePaths[page]} />
                     ))}
                 </Nav>
                 <ConnectButton />

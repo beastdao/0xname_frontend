@@ -2,6 +2,7 @@ import React from 'react';
 import TxStatusModalBasic, { ModalContentProps } from './TxStatusModalBasic';
 import AddTokenToWallet from '../connectKit/AddTokenToWallet';
 import { TransactionReceipt } from 'viem';
+import AddSnapButton from '../addSnapButton/addSnapButton';
 
 interface TxStatusModalWithTokenIdProps extends ModalContentProps {
     isSuccess: boolean;
@@ -38,7 +39,10 @@ const TxStatusModalWithTokenId: React.FC<TxStatusModalWithTokenIdProps> = ({
                     >
                         View transaction on <b>Etherscan</b>
                     </a>
-                    <AddTokenToWallet tokenIdValue={tokenId} />
+                    <div className="modalActionBtn">
+                        <AddTokenToWallet tokenIdValue={tokenId} />
+                        <AddSnapButton />
+                    </div>
                 </div>
             ) : null}
         </TxStatusModalBasic>

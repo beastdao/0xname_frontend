@@ -21,7 +21,13 @@ import CommunityBase from './pages/CommunityBase';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useLoadFrames } from './hooks';
 
-type PageKey = '🗂️ COMMUNITY BASE' | 'MY NAMES' | '🌈 REGISTER TLN' | 'MY TLNs' | 'ABOUT';
+type PageKey =
+    | '🗂️ COMMUNITY BASE'
+    | 'MY NAMES'
+    | '🌈 REGISTER TLN'
+    | 'MY TLNs'
+    | 'ABOUT'
+    | 'Download Snap';
 
 const App: React.FunctionComponent = () => {
     const { isSDKLoaded } = useLoadFrames();
@@ -35,6 +41,7 @@ const App: React.FunctionComponent = () => {
         '🌈 REGISTER TLN',
         'MY TLNs',
         'ABOUT',
+        'Download Snap',
     ];
     const queryClient = new QueryClient();
     return (
