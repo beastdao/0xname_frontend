@@ -16,7 +16,7 @@ const Home: React.FC = () => {
 
     return (
         <div className="home-content">
-            <h1>Get your free name now!</h1>
+            <h1>Claim your free 0xNAME - Ethereum’s leading public good naming service!</h1>
             <div className="home-content-child">
                 {/* Pass the handleInputChange function as a prop to the NameSearch component */}
                 <NameSearch defaultTLN={tlnValue} />
