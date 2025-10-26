@@ -1,6 +1,6 @@
 {
     "community_name": "Full Name of Your Community",
-    "pom_community_handle": "Community Handle in PoM",
+    "pom_community_handle": "Community TLN (Top level Name)",
     "description": "One Line Community Description",
     "website": "https://community.com | NO",
     "main_social_platform": {
