@@ -1,8 +1,8 @@
 {
-    "community_name": "PoM Community",
-    "pom_community_handle": "pom",
-    "description": "An open collective of passionate contributors on a mission to build an authentication system for web3 communities and their members.",
-    "website": "https://app.pom.cards",
+    "community_name": "0xNAMEs Community",
+    "pom_community_handle": "0xname",
+    "description": "An open collective of passionate people, who believe that digital identity is a right, not a product. We build 0xNAMEs, because everyone deserves a free web3 name on Ethereum, not just those who can pay for it.",
+    "website": "https://app.0xname.foo",
     "main_social_platform": {
         "platform_name": "Discord",
         "invite_link": "https://discord.gg/McqF7vyCWx"
